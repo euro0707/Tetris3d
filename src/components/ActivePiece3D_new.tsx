@@ -1,4 +1,4 @@
-import { useMemo } from 'react'
+import React, { useMemo } from 'react'
 import { useGame3DShallow } from '../store/useGame3D'
 import { WIDTH, HEIGHT, DEPTH, type Cell } from '../systems/logic3d'
 
@@ -12,7 +12,7 @@ export function ActivePiece3D() {
   const nodes = useMemo(() => {
     if (!piece) return null
     
-    const list: JSX.Element[] = []
+    const list: React.ReactElement[] = []
     const tile = 0.9
     const sy = piece.shape.length
     const sz = piece.shape[0].length

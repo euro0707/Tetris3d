@@ -1,8 +1,7 @@
 import { create } from 'zustand'
-import { shallow } from 'zustand/shallow'
 import { 
   createPiece3D, rotatePiece3D, canMove3D, mergePiece3D, clearLines3D, 
-  WIDTH, HEIGHT, DEPTH, type Cell, type Piece3D, type Grid3D 
+  WIDTH, HEIGHT, DEPTH, type Piece3D, type Grid3D 
 } from '../systems/logic3d'
 
 type State3D = {
@@ -180,4 +179,4 @@ if (typeof window !== 'undefined') {
   })
 }
 
-export const useGame3DShallow = <T,>(sel: (s: State3D) => T) => useGame3D(sel, shallow)
+export const useGame3DShallow = <T,>(sel: (s: State3D) => T) => useGame3D(sel)

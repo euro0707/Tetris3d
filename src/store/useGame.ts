@@ -1,5 +1,4 @@
 import { create } from 'zustand'
-import { shallow } from 'zustand/shallow'
 import { createPiece, rotatePiece, canMove, mergePiece, clearLines, WIDTH, HEIGHT, type Cell, type Piece } from '../systems/logic'
 
 type State = {
@@ -128,4 +127,4 @@ if (typeof window !== 'undefined') {
   })
 }
 
-export const useGameShallow = <T,>(sel: (s: State) => T) => useGame(sel, shallow)
+export const useGameShallow = <T,>(sel: (s: State) => T) => useGame(sel)

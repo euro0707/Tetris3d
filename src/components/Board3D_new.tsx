@@ -1,4 +1,4 @@
-import { useMemo } from 'react'
+import React, { useMemo } from 'react'
 import { useThree } from '@react-three/fiber'
 import * as THREE from 'three'
 import { useGame3DShallow } from '../store/useGame3D'
@@ -17,10 +17,10 @@ const COLORS: Record<Cell, string> = {
 
 export function Board3D() {
   const grid = useGame3DShallow(s => s.grid)
-  const { viewport } = useThree()
+  const {} = useThree()
 
   const cells = useMemo(() => {
-    const meshes: JSX.Element[] = []
+    const meshes: React.ReactElement[] = []
     const tile = 0.9
     
     for (let y=0; y<HEIGHT; y++) {

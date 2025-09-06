@@ -1,6 +1,6 @@
-import { useMemo } from 'react'
+import React, { useMemo } from 'react'
 import { useThree } from '@react-three/fiber'
-import { useGame, useGameShallow } from '../store/useGame'
+import { useGameShallow } from '../store/useGame'
 import { WIDTH, HEIGHT, type Cell } from '../systems/logic'
 
 const COLORS: Record<Cell, string> = {
@@ -16,10 +16,10 @@ const COLORS: Record<Cell, string> = {
 
 export function Board3D() {
   const grid = useGameShallow(s => s.grid)
-  const { viewport } = useThree()
+  const {} = useThree()
 
   const cells = useMemo(() => {
-    const meshes: JSX.Element[] = []
+    const meshes: React.ReactElement[] = []
     const tile = 0.9
     for (let y=0; y<HEIGHT; y++) for (let x=0; x<WIDTH; x++) {
       const c = grid[y][x]
